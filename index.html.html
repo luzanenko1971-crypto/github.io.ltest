@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эфирные масла: Полный гид по инструментам</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section:nth-child(even) {
+            background: white;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 50px;
+            color: #1b5e20;
+            font-weight: 400;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #4CAF50;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f1f8e9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #81C784, #4CAF50);
+        }
+
+        .tool-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .tool-card h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+
+        .tool-card .capacity {
+            background: #e8f5e9;
+            color: #2e7d32;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .tool-card p {
+            color: #546e7a;
+            margin-bottom: 15px;
+        }
+
+        .warning {
+            background: #fff3e0;
+            border: 1px solid #ffcc02;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .warning-icon {
+            color: #ff9800;
+            font-size: 1.5em;
+            flex-shrink: 0;
+        }
+
+        .warning-text {
+            color: #5d4037;
+            font-size: 0.95em;
+        }
+
+        .oils-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .oil-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #f1f8e9;
+        }
+
+        .oil-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .oil-card h4 {
+            color: #1b5e20;
+            margin: 15px 0 10px;
+            font-size: 1.2em;
+        }
+
+        .oil-card .properties {
+            font-size: 0.9em;
+            color: #78909c;
+            line-height: 1.5;
+        }
+
+        .shop-info {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid #dcedc8;
+        }
+
+        .shop-info h3 {
+            color: #1b5e20;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .shop-address {
+            font-size: 1.1em;
+            color: #2e7d32;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+
+        .shop-contact {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #dcedc8;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .note {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .note h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1em;
+            color: #546e7a;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌿 Инструменты для работы с эфирными маслами</h1>
+            <p>Полный гид по aromatherapy: от роллеров до базовых масел</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2>🛠️ Необходимый инвентарь</h2>
+            <p class="section-intro">
+                Эфирные масла — летучие и концентрированные вещества, требующие правильного подхода и качественных инструментов. 
+                Всё должно быть из стекла (желательно тёмного), так как масла разрушают пластик и чувствительны к свету.
+            </p>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <span class="tool-icon">🧴</span>
+                    <h3>Роллеры</h3>
+                    <span class="capacity">10 мл / 3-5 мл</span>
+                    <p>Удобные флаконы с роликовым аппликатором. Наливаете базовое масло, капаете эфирное — и готово! Можно носить с собой.</p>
+                    <div class="warning">
+                        <span class="warning-icon">⚠️</span>
+                        <div class="warning-text">Крышечка сверху должна иметь "крыльшечку" для удобного открывания</div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <span class="tool-icon">🥃</span>
+                    <h3>Мерный стаканчик</h3>
+                    <span class="capacity">Стеклянный</span>
+                    <p>С делениями для точного измерения 10-20 мл базового масла. Необходим для создания смесей дома.</p>
+                    <p><strong>Бонус:</strong> Встроенная воронка для переливания.</p>
+                </div>
+
+                <div class="tool-card">
+                    <span class="tool-icon">⛧</span>
+                    <h3>Мини-воронки</h3>
+                    <span class="capacity">Миниатюрные</span>
+                    <p>Идеально вставляются в горлышко флакончика. Позволяют наливать масло без разливания.</p>
+                </div>
+
+                <div class="tool-card">
+                    <span class="tool-icon">💧</span>
+                    <h3>Бутылочки с пипеткой</h3>
+                    <span class="capacity">10-30 мл</span>
+                    <p>Стеклянные флаконы с пипеткой для хранения готовых смесей. Отлично подходят для сывороток для лица.</p>
+                </div>
+
+                <div class="tool-card">
+                    <span class="tool-icon">🥄</span>
+                    <h3>Стеклянные палочки</h3>
+                    <span class="capacity">Для смешивания</span>
+                    <p>Необходимы для приготовления гелей на основе эфирных масел. Помогают качественно перемешать симульгель.</p>
+                </div>
+
+                <div class="tool-card">
+                    <span class="tool-icon">🧪</span>
+                    <h3>Симульгель</h3>
+                    <span class="capacity">База для гелей</span>
+                    <p>Ускоряет проникновение эфирных масел в кожу, делает текстуру приятной. Будет раскрыт в отдельном ролике.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>🌰 Базовые масла-носители</h2>
+            <p class="section-intro">
+                Эфирные масла <strong>обязательно нужно разбавлять</strong> базовыми растительными маслами. 
+                Они служат носителем, доставляют эфирные масла в тело и сами приносят пользу.
+            </p>
+
+            <div class="oils-grid">
+                <div class="oil-card">
+                    <span class="tool-icon" style="font-size: 2.5em;">🥥</span>
+                    <h4>Фракционированное кокосовое масло</h4>
+                    <p class="properties">
+                        • Без запаха<br>
+                        • Быстро впитывается<br>
+                        • Не оставляет жирных следов<br>
+                        • Стабилизирует эфирные масла<br>
+                        <strong>Бренд:</strong> doTERRA
+                    </p>
+                </div>
+
+                <div class="oil-card">
+                    <span class="tool-icon" style="font-size: 2.5em;">🌰</span>
+                    <h4>Кунжутное масло</h4>
+                    <p class="properties">
+                        • Глубокое проникновение<br>
+                        • Антипаразитарный эффект<br>
+                        • Антивирусное действие<br>
+                        • Разогревающий эффект<br>
+                        <strong>Авторский выбор:</strong> Сыродавленное
+                    </p>
+                </div>
+
+                <div class="oil-card">
+                    <span class="tool-icon" style="font-size: 2.5em;">🌸</span>
+                    <h4>Миндальное масло</h4>
+                    <p class="properties">
+                        • Нейтральный запах<br>
+                        • Идеально для духов<br>
+                        • Быстро впитывается<br>
+                        • Богато витаминами<br>
+                        <strong>Авторский выбор:</strong> Сыродавленное
+                    </p>
+                </div>
+
+                <div class="oil-card">
+                    <span class="tool-icon" style="font-size: 2.5em;">🍑</span>
+                    <h4>Масло абрикосовых косточек</h4>
+                    <p class="properties">
+                        • Лёгкая текстура<br>
+                        • Богато аминокислотами<br>
+                        • Питает кожу<br>
+                        • Смягчающий эффект
+                    </p>
+                </div>
+            </div>
+
+            <div class="note">
+                <h4>💡 Совет от спикера</h4>
+                <p>Для дезодорантов подмышек используйте фракционированное кокосовое масло — оно не оставляет следов. Для лечебных целей и общего ухода — сыродавленные масла (кунжутное, миндальное), которые сами несут пользу организму.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>🛒 Где купить всё необходимое</h2>
+            
+            <div class="shop-info">
+                <span class="tool-icon" style="font-size: 3em;">🏪</span>
+                <h3>Клуб Маловарских</h3>
+                <p class="shop-address">
+                    📍 Пушкина, 109, г. Пермь<br>
+                    🌐 Есть сайт с доставкой по России
+                </p>
+                <p style="margin: 15px 0;">
+                    Здесь можно приобрести: роллеры, стеклянную посуду, симульгель, палочки и другие аксессуары для ароматерапии.
+                </p>
+                
+                <div class="shop-contact">
+                    <p style="margin-bottom: 15px;">
+                        🤝 <strong>Альтернатива:</strong> Обратитесь к вашему наставнику в doTERRA — он подскажет, где и что купить.
+                    </p>
+                    <a href="#" class="btn">Связаться с наставником</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>📚 Что дальше?</h2>
+            <p class="section-intro">
+                В следующих роликах спикер обещает рассказать о:
+            </p>
+            
+            <div class="tools-grid" style="margin-top: 20px;">
+                <div class="tool-card">
+                    <span class="tool-icon">🎯</span>
+                    <h3>Как встраивать масла в себя</h3>
+                    <p>Методы применения и техники работы с эфирными маслами</p>
+                </div>
+                <div class="tool-card">
+                    <span class="tool-icon">💎</span>
+                    <h3>Рецепты гелей</h3>
+                    <p>Как сделать качественные гели с симульгелем для идеального проникновения</p>
+                </div>
+                <div class="tool-card">
+                    <span class="tool-icon">🍽️</span>
+                    <h3>Пищевые капли</h3>
+                    <p>Возможности внутреннего применения (aromatouch)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>🌿 Создано с любовью к природе и здоровью | Данные из ролика 1202.MP3</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Распознано с помощью speech2text.ru</p>
+        </div>
+    </footer>
+</body>
+</html>
